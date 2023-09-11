@@ -10,8 +10,10 @@ driver = webdriver.Chrome()
 # 웹 페이지 접근
 driver.get('https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=100')
 
+# 더 보기 버튼을 누르기 위한 CSS 선택자
 load_more_button_selector = 'div.cluster_more a.cluster_more_inner'
 
+# 더 보기 버튼을 누르는 코드. load_moare_button_selector 요소가 나타날 때까지 10초동안 기다리도록 함.
 load_more_button = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, load_more_button_selector))
 )
