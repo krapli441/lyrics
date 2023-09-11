@@ -12,7 +12,7 @@ driver.get('https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=100')
 
 load_more_button_selector = 'div.cluster_more a.cluster_more_inner'
 
-load_more_button = WebDriverWait(driver, 3).until(
+load_more_button = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, load_more_button_selector))
 )
 
