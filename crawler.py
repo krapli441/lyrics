@@ -10,6 +10,15 @@ driver = webdriver.Chrome()
 # 웹 페이지 접근
 driver.get('https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=100')
 
+load_more_button_selector = 'div.cluster_more a.cluster_more_inner'
+
+load_more_button = WebDriverWait(driver, 3).until(
+    EC.presence_of_element_located((By.CSS_SELECTOR, load_more_button_selector))
+)
+
+# 버튼 클릭
+load_more_button.click()
+
 # 헤드라인 뉴스 제목을 가져오기 위한 CSS 선택자
 headlines_selector = 'ul.sh_list li.sh_item div.sh_text a.sh_text_headline'
 
